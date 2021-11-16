@@ -18,10 +18,9 @@ export default class TabButtons {
       .map((tab) => {
         return `
                     <li>
-                        <button type="button" class="button-app-controller">
-                            <i class="tab-icon ${tab.iconName}>
-                                ${tab.title}
-                            </i>
+                        <button class="button-app-controller">
+                            <i class="tab-icon ${tab.iconName}"></i>
+                            ${tab.title}
                         </button>
                     </li>
                 `;
