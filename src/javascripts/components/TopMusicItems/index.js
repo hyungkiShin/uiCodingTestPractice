@@ -61,8 +61,8 @@ export default class TopMusics {
   requestPause(target) {
       this.emit('pause');
       target.classList.replace('icon-pause', 'icon-play');
-
   }
+  
   // 플레이 리스트에 추가 요청
   requestAddPlayList(target) {
     const controller = target.parentElement;
