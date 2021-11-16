@@ -11,7 +11,7 @@ const getClosestElement = (element, selector) => {
         return element;
     }
 
-    return getClossetElement(element.parentElement, selector);
+    return getClosestElement(element.parentElement, selector);
 }
 
-export default getClossetElement;
+export default getClosestElement;
