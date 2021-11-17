@@ -1,6 +1,6 @@
-export default class TopMusics {
+export default class TopMusicItems {
   constructor() {
-    this.rootElement = TopMusics.createRootElement();
+    this.rootElement = TopMusicItems.createRootElement();
     this.musics = [];
     this.bindEvents();
   }
@@ -52,23 +52,23 @@ export default class TopMusics {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
     const payload = { musics: this.musics, musicIndex };
-    this.emit('play', payload);
+    this.emit("play", payload);
     this.renderStopAll();
-    target.classList.replace('icon-play', 'icon-pause');
+    target.classList.replace("icon-play", "icon-pause");
   }
 
   // 음악 중단
   requestPause(target) {
-      this.emit('pause');
-      target.classList.replace('icon-pause', 'icon-play');
+    this.emit("pause");
+    target.classList.replace("icon-pause", "icon-play");
   }
-  
+
   // 플레이 리스트에 추가 요청
   requestAddPlayList(target) {
     const controller = target.parentElement;
-    const {index : musicIndex} = controller.dataset;
+    const { index: musicIndex } = controller.dataset;
     const payload = { musics: this.musics, musicIndex };
-    this.emit('addPlayList', payload);
+    this.emit("addPlayList", payload);
   }
 
   // 음악 데이터를 받아오기
@@ -121,9 +121,8 @@ export default class TopMusics {
       `;
       })
       .join("");
-    this.rootElement.innerHTML =
-      topRoof + `<ol class="top5-list"> ${musicsList} </ol>`;
-      
-      return this.rootElement;
+    this.rootElement.innerHTML = topRoof + `<ol class="top5-list">` + musicsList + `</ol>`
+
+    return this.rootElement;
   }
 }

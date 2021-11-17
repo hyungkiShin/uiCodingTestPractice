@@ -40,21 +40,21 @@ export default class PlayList {
         return;
       }
       if (random) {
-        currentIndex = Math.random() * (this.musicList.length - 2);
+        currentIndex = Math.floor(Math.random() * (this.musicList.length - 2));
       }
     }
 
-    const nextIndex = currentIndex + 1 ;
+    const nextIndex = currentIndex + 1;
     this.playMusicItem(nextIndex);
   }
 
   playPrev() {
-      let currentIndex = this.musicList.findIndex(music => music.playing);
-      if(currentIndex <= 0) {
-          currentIndex = this.musicList.length;
-      }
-      const prevIndex = currentIndex -1 ;
-      this.playMusicItem(prevIndex)
+    let currentIndex = this.musicList.findIndex((music) => music.playing);
+    if (currentIndex <= 0) {
+      currentIndex = this.musicList.length;
+    }
+    const prevIndex = currentIndex - 1;
+    this.playMusicItem(prevIndex);
   }
 
   playMusicItem(target) {
@@ -100,7 +100,7 @@ export default class PlayList {
   }
 
   loadStorage() {
-    const stringfiedPlaylist = loadStorage.getItem("playlist");
+    const stringfiedPlaylist = localStorage.getItem("playlist");
     try {
       const playList = JSON.parse(stringfiedPlaylist);
       this.musicList = playList instanceof Array ? playList : [];
