@@ -69,11 +69,12 @@ export default class App {
     
     // 검색 컴포넌트 Start
     this.searchView.on("searchMusic", (query) => {
+      console.log('query', query)
       // 아무 값이 없으면 검색 결과를 빈화면으로 돌립니다.
       if (!query) {
         return this.searchView.setSearchResult([]);
       }
-      const searchedMusics = this.topMusics.musics.filter((music) => {
+      const searchedMusics = this.topMusicItems.musics.filter((music) => {
         const { artists, title } = music;
         const upperCaseQuery = query.toUpperCase();
         const filteringName = artists.some((artist) =>
