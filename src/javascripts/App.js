@@ -20,7 +20,6 @@ export default class App {
   async setup() {
     const { el } = this.props; // 최초 el 은 #app 을 받아와서 처리합니다.
     this.rootElement = document.querySelector(el);
-
     this.intro = new Intro();
     this.tabButtons = new TabButtons();
     this.playView = new PlayView();
@@ -69,7 +68,6 @@ export default class App {
     
     // 검색 컴포넌트 Start
     this.searchView.on("searchMusic", (query) => {
-      console.log('query', query)
       // 아무 값이 없으면 검색 결과를 빈화면으로 돌립니다.
       if (!query) {
         return this.searchView.setSearchResult([]);

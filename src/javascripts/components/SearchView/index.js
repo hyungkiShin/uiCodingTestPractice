@@ -74,7 +74,6 @@ export default class SearchView {
 
   // 음악 재생
   requestPlay(target) {
-    console.log(target);
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
     const payload = { musics: this.musics, musicIndex };

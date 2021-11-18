@@ -46,16 +46,16 @@ img {
 }
 
 .top5-list {
-    height: 65%;
-    padding: 18px 0;
+  height: 65%;
+  padding: 18px 0;
 }
 
 .top5-list li {
-    display: flex;
+  display: flex;
 }
 
 .top5-list li + li {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .music-rank {
@@ -113,7 +113,7 @@ img {
   align-items: center;
 }
 
-.app-controller { 
+.app-controller {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   position: fixed;
@@ -129,17 +129,17 @@ img {
   font-size: 10px;
 }
 
-.app-controller li.on{ 
+.app-controller li.on {
   color: var(--main-color);
 }
 
 .button-app-controller {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 100%;
-   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .invisible-text {
@@ -161,7 +161,7 @@ img {
 .music-list li {
   padding: 18px 0;
   margin: 0 23px;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .music-list li.on .music-title {
@@ -195,4 +195,60 @@ img {
   height: 20px;
   background-image: url(../assets/icons/tiny_search.png);
   background-size: 20px;
+}
+
+.play-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 5000;
+}
+
+.play-view .play-view-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 60px 34px 16px;
+  overflow: scroll;
+}
+
+.play-view .back-button {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.play-view .back-button .icon-controller-back {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/icons/arrow-left.png);
+  background-size: 24px;
+}
+
+.play-view .cover-wrapper {
+  margin: 34px auto 26px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.play-view .cover-wrapper img {
+  height: 100%;
+  object-fit: cover; /* 대체 컴포넌트의 가로 세로 를 유지하면서 cover-wrapper 를 가득 채우게 된다. */
+}
+
+.play-view .music-title {
+  font-weight: bold;
+}
+
+.play-view .music-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
