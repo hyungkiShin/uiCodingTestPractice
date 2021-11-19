@@ -51,7 +51,7 @@ export default class TopMusicItems {
   requestPlay(target) {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
-    const payload = { musics: this.searchedMusics, musicIndex };
+    const payload = { musics: this.musics, musicIndex };
     this.emit("play", payload);
     this.renderStopAll();
     target.classList.replace("icon-play", "icon-pause");
@@ -67,7 +67,7 @@ export default class TopMusicItems {
   requestAddPlayList(target) {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
-    const payload = { musics: this.searchedMusics, musicIndex };
+    const payload = { musics: this.musics, musicIndex };
     this.emit("addPlayList", payload);
   }
 
