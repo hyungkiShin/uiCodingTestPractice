@@ -10,7 +10,7 @@ export default class PlayList {
 
   static createRootElement() {
     const rootElement = document.createElement("article");
-    rootElement.classList.add("content-playlist");
+    rootElement.classList.add("contents-playlist");
 
     return rootElement;
   }
@@ -149,7 +149,7 @@ export default class PlayList {
                     </div>
                     <div class="music-simple-controller">
                         <button class="icon icon-minus">
-                            <span class="invisble-text">제거</span>
+                            <span class="invisble-text"></span>
                         </button>
                     </div>
                 </div>
